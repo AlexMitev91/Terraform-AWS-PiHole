@@ -22,5 +22,7 @@ sudo systemctl start docker
 sudo systemctl enable docker
 
 # Download the compose file and start the container
-sudo git clone https://github.com/AlexMitev91/Terraform-AWS-PiHole.git /tmp/pi-hole
-sudo docker compose -f /tmp/pi-hole/docker-compose.yml up -d
+sudo mkdir -p mkdir /software/pi-hole
+sudo wget -O /software/pi-hole/docker-compose.yml  https://raw.github.com/AlexMitev91/Terraform-AWS-PiHole/main/docker-compose.yml
+#sudo git clone https://github.com/AlexMitev91/Terraform-AWS-PiHole.git /software/pi-hole
+sudo docker compose -f /software/pi-hole/docker-compose.yml up -d
